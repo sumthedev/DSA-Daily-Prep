@@ -84,21 +84,17 @@ int allocatedBook(vector<int> &arr, int m, int n)
 
 int main()
 {
-
     // vector<int> arr = {2, 1, 3, 4};
     vector<int> arr = {15,17,20};
     int m = 2;
     int n = 3;
-
     cout << allocatedBook(arr, m, n) << " ";
 }
 
 
 //logic behind 
 // If you have 5 students and only 3 books, it’s impossible to give at least one book to each student → invalid.
-
 // But if you have 3 students and 5 books, it’s fine some students will get more than one book.
-
 // we need to find minimum book in maximise books 
 
 
