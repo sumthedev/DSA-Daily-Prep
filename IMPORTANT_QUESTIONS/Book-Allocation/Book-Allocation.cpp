@@ -85,9 +85,10 @@ int allocatedBook(vector<int> &arr, int m, int n)
 int main()
 {
     // vector<int> arr = {2, 1, 3, 4};
-    vector<int> arr = {15,17,20};
+    // vector<int> arr = {15,17,20};
+    vector<int> arr = {40,30,10,20};
     int m = 2;
-    int n = 3;
+    int n = 4;
     cout << allocatedBook(arr, m, n) << " ";
 }
 
