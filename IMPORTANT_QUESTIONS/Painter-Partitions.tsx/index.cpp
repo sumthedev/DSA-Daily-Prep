@@ -64,9 +64,10 @@ int main()
 {
 
     // vector<int> arr = {40, 30, 12, 20};
-    vector<int> arr = {40, 30, 10, 20};
-    int n = 4;
-    int m = 2;
+    // vector<int> arr = {40, 30, 10, 20};
+     vector<int> arr = {1,2,8,4,9};
+    int n = 5;
+    int m = 3;
 
     cout << painterPartitions(arr, m, n) << " ";
 }
