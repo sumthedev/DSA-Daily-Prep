@@ -71,4 +71,4 @@ int main()
 }
 
 
-//the sorting alg time complexity will be O(n^2)
+//the sorting algo time complexity will be O(n^2)
