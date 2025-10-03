@@ -21,8 +21,7 @@ class Teacher {
 
     double getSal() {
         return salaray;
-    }
-    
+    }   
     
 };
 
