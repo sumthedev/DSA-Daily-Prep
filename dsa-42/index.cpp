@@ -55,6 +55,39 @@ public:
         }
     }
 
+    void pop_front () {
+        
+        if(head == NULL) {
+            return;
+        }
+
+        Node* temp = head;
+        head = head->next;
+        temp->next = NULL;
+        delete temp;
+
+
+    }
+
+
+    void pop_back () 
+    {
+        if(head == NULL) {
+            return;
+        }
+
+        Node* temp = head;
+
+        while(temp->next != tail) {
+            temp = temp->next;
+        }
+
+        temp->next = NULL;
+        delete tail;
+        tail = temp->next;
+
+    }
+
     void print()
     {
         Node *temp = head;
@@ -72,11 +105,14 @@ public:
 int main()
 {
     List ll;
-    ll.push_front(1);
-    ll.push_front(2);
     ll.push_front(3);
-
+    ll.push_front(2);  
+    ll.push_front(1);
+   
     ll.push_back(5);
+
+    // ll.pop_front();
+    ll.pop_back();
     ll.print();
 
     return 0;
