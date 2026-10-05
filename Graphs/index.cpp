@@ -1,6 +1,8 @@
 #include <iostream>
 #include <vector>
 #include <list>
+#include <queue>
+
 using namespace std;
 
 class Graph
@@ -35,6 +37,32 @@ public:
             cout << endl;
         }
     }
+
+    void bfs()
+    {
+        queue<int> Q;
+        vector<bool> vis(V, false);
+        Q.push(0);
+        vis[0] = true;
+
+        while (Q.size() > 0)
+        {
+            int u = Q.front(); // u-> src
+            Q.pop();
+
+            cout << u << " ";
+            for (int v : l[u]) // v-> destination or neigbhors
+            {
+                if (!vis[v])
+                {
+                    vis[v] = true;
+                    Q.push(v);
+                }
+            }
+        }
+
+        cout << endl;
+    }
 };
 
 int main()
@@ -46,7 +74,9 @@ int main()
     g.addEdge(2, 3);
     g.addEdge(2, 4);
 
-    g.printAdjList();
+    // g.printAdjList();
+
+    g.bfs();
 
     return 0;
 }
