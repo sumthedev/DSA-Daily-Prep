@@ -84,22 +84,63 @@ public:
         vector<bool> vis(V, false);
         dfsHelper(src, vis);
     }
+
+    bool isCycleUnDFS(int src, int par, vector<bool> &vis)
+    {
+        vis[src] = true;
+        list<int> neighbora = l[src];
+        for (int v : neighbora)
+        {
+            if (!vis[v])
+            {
+                if (isCycleUnDFS(v, src, vis))
+                {
+                    return true;
+                }
+            }
+            else if (v != par)
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    bool isCycle()
+    {
+         vector<bool> vis(V, false);
+
+        for (int i = 0; i < V; i++)
+        {
+            if (!vis[i])
+            {
+                if (isCycleUnDFS(i, -1, vis))
+                {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 };
 
 int main()
 {
     Graph g(5);
     g.addEdge(0, 1);
-    g.addEdge(1, 2);
-    g.addEdge(1, 3);
-    g.addEdge(2, 4);
+    //g.addEdge(0, 2);
+    g.addEdge(0, 3);
+    g.addEdge(3, 4);
 
     // g.printAdjList();
 
     // g.bfs();
 
-    g.dfs();
+   cout<< g.isCycle() << " ";
     cout << endl;
+
+
 
     return 0;
 }
